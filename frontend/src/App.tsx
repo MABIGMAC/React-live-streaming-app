@@ -17,10 +17,11 @@ function App() {
 		) {
 			const hls = new Hls()
 
-			hls.attachMedia(video)
 			hls.on(Hls.Events.MEDIA_ATTACHED, () => {
 				console.log('video and hls.js are now bound together!')
 			})
+			hls.loadSource('https://ireplay.tv/test/blender.m3u8')
+			hls.attachMedia(video)
 
 			return () => {
 				hls.destroy() // Cleanup on unmount
