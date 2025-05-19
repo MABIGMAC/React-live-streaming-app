@@ -13,7 +13,9 @@ function App() {
 
 		if (
 			Hls.isSupported() &&
-			window.MediaSource?.isTypeSupported('video/mp4;codecs="av01.0.01M.08"')
+			window.MediaSource?.isTypeSupported(
+				'video/mp4;codecs="avc1.42E01E, mp4a.40.2"',
+			)
 		) {
 			const hls = new Hls()
 
